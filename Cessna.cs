@@ -3,13 +3,15 @@ using System.Collections.Generic;
 
 namespace Garage
 {
-    public class Cessna : Vehicle  // Propellor light aircraft
+    public class Cessna : Vehicle, IGasVehicle  // Propellor light aircraft
     {
+        public double CurrentTankPercentage { get; set;} = 10;
         public double FuelCapacity { get; set; }
 
 
         public void RefuelTank()
         {
+             CurrentTankPercentage = 100;
             // method definition omitted
         }
         public override void Drive()

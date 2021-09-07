@@ -3,14 +3,15 @@ using System.Collections.Generic;
 
 namespace Garage
 {
-    public class Tesla : Vehicle  // Electric car
+    public class Tesla : Vehicle, IElectricVehicle  // Electric car
     {
         public double BatteryKWh { get; set; }
-
+        public double CurrentChargePercentage { get; set; } = 20;
 
         public void ChargeBattery()
         {
-            Console.WriteLine($"Your Tesla now charged to {this.BatteryKWh}KWH.");
+            // Console.WriteLine($"Your Tesla now charged to {BatteryKWh}KWH.");
+            CurrentChargePercentage = 100;
             // method definition omitted
         }
 
